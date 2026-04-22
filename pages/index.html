@@ -1,40 +1,62 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
-    <title>Document</title>
-</head>
-<body>
-    <h1>TAREFAS DO PROJETO</h1>
-    
-    <form class="linha">
-        <label for="">Valor da hora</label>
-        <input type="number" id="valor-hora" placeholder="R$00,00">
-    </form>
+    <!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>DEV.eres</h1>
 
-    <form class="linha">
-        <section class="fundocinza">
-            <input type="text" id="nome-tarefa" placeholder="Insira a tarefa...">
-            <label for="">Horas</label>
-            <input type="number" id="horas" placeholder="00h">
-        </section>
-        <button class="adicionar">
-            <span class="material-symbols-outlined">add</span>
-        </button>
-    </form>
-
-    <form class="linhacinza">
-        <section class="">
-            <p>Tarefa 1</p>
-            <p>00h</p>
-            <button class="excluir">
-                <span class="material-symbols-outlined">delete</span>
+        <form class="linha">
+            <section class="fundocinza">
+                <input type="text" id="nome-tarefa" placeholder="Insira a tarefa...">
+                <label>Horas</label>
+                <input type="number" class="campobranco" id="horas" placeholder="0h">
+                <label>Valor da hora</label>
+                <input type="number" class="campobranco" id="valor-hora" placeholder="R$00,00">
+                <label>Imposto</label>
+                <input type="number" class="campobranco" id="imposto" placeholder="0%">
+                <select name="urgencia" id="urgencia">
+                    <option value="">Selecione uma urgência</option>
+                    <option value="alta">Alta urgência</option>
+                    <option value="media">Média urgência</option>
+                    <option value="nenhuma">Sem urgência</option>
+                </select>
+            </section>
+            <button type="button" class="adicionar" onclick="adicionarTarefa()">
+                <span class="material-symbols-outlined">add</span>
             </button>
-        </section>
-    </form>
+        </form>
 
-</body>
-</html>
+        <div class="dashboard oculto">
+            
+            <div class="orcamento">
+                <p class="titulo">Custo total</p>
+                <p id="out-total" class="valor"></p>
+            </div>
+
+            <div class="orcamento">
+                <p class="titulo">Horas totais</p>
+                <p id="out-horastotais" class="valor"></p>
+            </div>
+
+        </div>
+
+        <div class="header oculto">
+            <p>Tarefa</p>
+            <p>Horas</p>
+            <p>Valor Final</p>
+            <p>Ações</p>
+        </div>
+
+        <div id="lista-tarefas"></div>
+
+        <footer>
+            <p></p>
+        </footer>
+        <script src="../scripts/script.js"></script>
+    </body>
+    </html>
